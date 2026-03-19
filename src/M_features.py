@@ -1,5 +1,5 @@
 """
-Feature enginnering pipeline for March Machine Learning Mania 2026.
+Feature enginnering pipeline for March Machine Learning Mania 2026 — Men's bracket.
 Builds a per-team per-season profile vector used to generate matchup features.
 
 Feature groups:

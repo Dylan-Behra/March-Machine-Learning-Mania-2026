@@ -51,6 +51,52 @@ Women's bracket substitutes:
 
 ---
 
+## 2026 Predictions
+
+Odds generated via 10,000 Monte Carlo simulations of the full bracket using the trained XGBoost models. See [bracket_explorer.ipynb](notebooks/bracket_explorer.ipynb) for the full breakdown by region.
+
+### Men's Championship Contenders
+
+| Seed | Team | Region | Final Four | Finals | Champion |
+|---|---|---|---|---|---|
+| 1 | Duke | W | 61.2% | 48.5% | **27.7%** |
+| 1 | Michigan | Y | 46.6% | 32.2% | 18.8% |
+| 1 | Arizona | Z | 39.3% | 21.0% | 11.6% |
+| 1 | Florida | X | 44.0% | 14.9% | 8.8% |
+| 2 | Houston | X | 26.4% | 10.7% | 6.0% |
+| 3 | Gonzaga | Z | 17.9% | 9.3% | 5.5% |
+| 2 | Iowa St | Y | 18.8% | 8.9% | 3.8% |
+| 2 | Purdue | Z | 23.1% | 10.8% | 3.3% |
+| 3 | Virginia | Y | 16.5% | 6.3% | 2.4% |
+| 2 | Connecticut | W | 11.2% | 5.7% | 2.1% |
+
+### Men's Cinderella Watch *(seed ≥ 9, P(Sweet 16) ≥ 20%)*
+
+| Seed | Team | Region | R1 | R2 | Sweet 16 | Elite 8 |
+|---|---|---|---|---|---|---|
+| 11 | South Florida | W | 100% | 65.8% | 26.6% | 8.6% |
+| 9 | St Louis | Y | 100% | 60.7% | 22.3% | 9.9% |
+| 11 | VCU | X | 100% | 41.7% | 22.8% | 3.7% |
+
+### Women's Championship Contenders
+
+| Seed | Team | Region | Final Four | Finals | Champion |
+|---|---|---|---|---|---|
+| 1 | Connecticut | W | 80.2% | 66.0% | **47.5%** |
+| 1 | UCLA | Z | 73.0% | 54.7% | 23.3% |
+| 1 | Texas | Y | 81.8% | 32.2% | 15.2% |
+| 1 | South Carolina | X | 83.8% | 29.0% | 10.7% |
+| 2 | LSU | Z | 21.6% | 9.7% | 2.4% |
+| 2 | Michigan | Y | 8.0% | 1.5% | 0.3% |
+| 3 | Louisville | Y | 7.2% | 0.9% | 0.1% |
+| 2 | Iowa | X | 6.7% | 1.4% | 0.1% |
+
+### Women's Cinderella Watch *(seed ≥ 9, P(Sweet 16) ≥ 20%)*
+
+None met this threshold — the Women's bracket is heavily top-loaded, with the four 1-seeds combining for a 96.7% Final Four probability.
+
+---
+
 ## Project Structure
 
 ```
@@ -90,7 +136,8 @@ python src/model.py
 
 ---
 
-## Limitations
+## Limitations / Potential Future Improvements
 
-- **No injury data**: Player-level box scores are not provided by the competition, making it impossible to capture in-game player availability. A proxy approach would require rotation tracking that the data doesn't support.
+- **No injury data**: Player-level box scores are not provided, requiring injury data to be outsourced. Despite this, health is essential in playoff season and certainly contributes to the noise of March Madness. I hope I might be able to find a workaround for this in following years. 
 - **Women's data gaps**: No Massey Ordinals or coaching records are available for the women's bracket.
+- **Upset awareness**: The model treats each game independently and doesn't encode known base rates of tournament variance — in the vast majority of Men's tournaments, at least one 9+ seed reaches the Sweet 16. A future version could study profiles of historical Cinderella teams and use those patterns to redistribute probability mass toward upsets in a statistically grounded way.

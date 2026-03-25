@@ -93,7 +93,7 @@ Odds generated via 10,000 Monte Carlo simulations of the full bracket using the 
 
 ### Women's Cinderella Watch *(seed ≥ 9, P(Sweet 16) ≥ 20%)*
 
-None met this threshold — the Women's bracket is heavily top-loaded, with the four 1-seeds combining for a 96.7% Final Four probability.
+None met this threshold — the Women's bracket is heavily top-loaded, with the four 1-seeds averaging a 79.7% probability of reaching the Final Four.
 
 ---
 

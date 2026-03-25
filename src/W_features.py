@@ -23,10 +23,12 @@ Feature groups:
 import pandas as pd
 import numpy as np
 import os
+from pathlib import Path
 
 # -- Paths --
-RAW = r"C:\Personal Projects\MMLM-2026\data\raw"
-PROCESSED = r"C:\Personal Projects\MMLM-2026\data\processed"
+BASE = Path(__file__).resolve().parent.parent
+RAW = str(BASE / "data" / "raw")
+PROCESSED = str(BASE / "data" / "processed")
 os.makedirs(PROCESSED, exist_ok=True)
 
 # -- Load raw data --

@@ -29,15 +29,17 @@ import xgboost as xgb
 from sklearn.metrics import log_loss, brier_score_loss
 import warnings
 import os
- 
+from pathlib import Path
+
 warnings.filterwarnings('ignore')
- 
+
 # -----------------------------------------------------------------------
 # CONFIG
 # -----------------------------------------------------------------------
-RAW       = r"C:\Personal Projects\MMLM-2026\data\raw"
-PROCESSED = r"C:\Personal Projects\MMLM-2026\data\processed"
-OUT       = r"C:\Personal Projects\MMLM-2026\submissions"
+BASE      = Path(__file__).resolve().parent.parent
+RAW       = str(BASE / "data" / "raw")
+PROCESSED = str(BASE / "data" / "processed")
+OUT       = str(BASE / "submissions")
 
 os.makedirs(OUT, exist_ok=True)
 

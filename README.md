@@ -70,12 +70,16 @@ Odds generated via 10,000 Monte Carlo simulations of the full bracket using the 
 | 3 | Virginia | Y | 16.5% | 6.3% | 2.4% |
 | 2 | Connecticut | W | 11.2% | 5.7% | 2.1% |
 
-### Men's Cinderella Watch *(seed ≥ 9, P(Sweet 16) ≥ 20%)*
+### Men's Cinderella Watch *(seed ≥ 9, P(R2) ≥ 40%)*
 
 | Seed | Team | Region | R1 | R2 | Sweet 16 | Elite 8 |
 |---|---|---|---|---|---|---|
+| 9 | Iowa | X | 100% | 68.8% | 13.9% | 9.1% |
 | 11 | South Florida | W | 100% | 65.8% | 26.6% | 8.6% |
 | 9 | St Louis | Y | 100% | 60.7% | 22.3% | 9.9% |
+| 9 | Utah St | Z | 100% | 60.5% | 13.3% | 7.8% |
+| 10 | Santa Clara | Y | 100% | 46.4% | 16.5% | 8.7% |
+| 9 | TCU | W | 100% | 41.7% | 3.1% | 0.8% |
 | 11 | VCU | X | 100% | 41.7% | 22.8% | 3.7% |
 
 ### Women's Championship Contenders
@@ -91,9 +95,12 @@ Odds generated via 10,000 Monte Carlo simulations of the full bracket using the 
 | 3 | Louisville | Y | 7.2% | 0.9% | 0.1% |
 | 2 | Iowa | X | 6.7% | 1.4% | 0.1% |
 
-### Women's Cinderella Watch *(seed ≥ 9, P(Sweet 16) ≥ 20%)*
+### Women's Cinderella Watch *(seed ≥ 9, P(R2) ≥ 40%)*
 
-None met this threshold — the Women's bracket is heavily top-loaded, with the four 1-seeds averaging a 79.7% probability of reaching the Final Four.
+| Seed | Team | Region | R1 | R2 | Sweet 16 | Elite 8 |
+|---|---|---|---|---|---|---|
+| 9 | USC | X | 100% | 73.7% | 5.4% | 2.2% |
+| 10 | Villanova | Z | 100% | 71.8% | 6.3% | 0.9% |
 
 ---
 
@@ -141,3 +148,4 @@ python src/model.py
 - **No injury data**: Player-level box scores are not provided, requiring injury data to be outsourced. Despite this, health is essential in playoff season and certainly contributes to the noise of March Madness. I hope I might be able to find a workaround for this in following years. 
 - **Women's data gaps**: No Massey Ordinals or coaching records are available for the women's bracket.
 - **Upset awareness**: The model treats each game independently and doesn't encode known base rates of tournament variance — in the vast majority of Men's tournaments, at least one 9+ seed reaches the Sweet 16. A future version could study profiles of historical Cinderella teams and use those patterns to redistribute probability mass toward upsets in a statistically grounded way.
+- **Hyperparameter Tuning**: I did not spend significant time tuning the XGBoost model's parameters and rather defaulted to a fairly basic set of paramters. I think this could certainly be an area for future imporvement.
